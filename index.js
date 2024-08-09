@@ -2,7 +2,12 @@ import express from "express";
 
 import bodyParser from "body-parser";
 
-import myCollectionModel from "./databaseLogic";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname=dirname(fileURLToPath(import.meta.url));
+
+import myCollectionModel from __dirname+"/databaseLogic.js";
 
 
 
