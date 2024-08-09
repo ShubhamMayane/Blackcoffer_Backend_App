@@ -70,144 +70,144 @@ app.get("/getData",function(req,res){
 
 
 
-// app.get("/getAllData",function(req,res){
+app.get("/getAllData",function(req,res){
 
-//     //3.get all documets (as a array of json objects) from database
-//     myCollectionModel.find({}).then(function(data) {
+    //3.get all documets (as a array of json objects) from database
+    myCollectionModel.find({}).then(function(data) {
 
-//     console.log(data);
+    console.log(data);
       
-//   //  to print 1st element in array
-//      console.log(data[0]);
+  //  to print 1st element in array
+     console.log(data[0]);
         
-//      //filter 1 :removing empty value data
+     //filter 1 :removing empty value data
 
-//      let finalData=data.filter((item)=>(item.intensity!=""&& item.country!="" && item.likelihood!="" && item.relevance !="" && item.start_year!="" && item.topic!="" && item.region!=""));
+     let finalData=data.filter((item)=>(item.intensity!=""&& item.country!="" && item.likelihood!="" && item.relevance !="" && item.start_year!="" && item.topic!="" && item.region!=""));
      
-//      //filter 2 :removing unwanted keyvalue pairs
+     //filter 2 :removing unwanted keyvalue pairs
      
-//   let finalData2=finalData.map((item)=>{
-//     return{
-//           intensity:item.intensity,
-//           country:item.country,
-//           likelihood:item.likelihood,
-//           relevance:item.relevance,
-//           start_year:item.start_year,
-//           topic:item.topic,
-//           region:item.region,
-//           city:item.city
+  let finalData2=finalData.map((item)=>{
+    return{
+          intensity:item.intensity,
+          country:item.country,
+          likelihood:item.likelihood,
+          relevance:item.relevance,
+          start_year:item.start_year,
+          topic:item.topic,
+          region:item.region,
+          city:item.city
 
-//       };
-//   });
+      };
+  });
 
-//   //filter 3:
+  //filter 3:
   
-//   const removeDuplicates = (array) => {
-//     const seen = new Set();
+  const removeDuplicates = (array) => {
+    const seen = new Set();
    
-//     let myArray= array.filter(item => {
-//         const serializedItem = JSON.stringify(item);
-//         return seen.has(serializedItem) ? false : seen.add(serializedItem);
-//     });
+    let myArray= array.filter(item => {
+        const serializedItem = JSON.stringify(item);
+        return seen.has(serializedItem) ? false : seen.add(serializedItem);
+    });
 
-//     return myArray;
-// };
+    return myArray;
+};
 
-//     let finalData3=removeDuplicates(finalData2);
+    let finalData3=removeDuplicates(finalData2);
 
-//     console.log(finalData3.length);
-
-
-//      res.json(finalData3);
-
-//    }).catch(function (err) {
-//      console.log(err);
-//    });
-// });
+    console.log(finalData3.length);
 
 
+     res.json(finalData3);
+
+   }).catch(function (err) {
+     console.log(err);
+   });
+});
 
 
-// app.get("/getAllTopics",function(req,res){
 
 
-//     //3.get all documets (as a array of json objects) from database
-//     myCollectionModel.find({}).then(function(data) {
+app.get("/getAllTopics",function(req,res){
 
-//        console.log(data);
+
+    //3.get all documets (as a array of json objects) from database
+    myCollectionModel.find({}).then(function(data) {
+
+       console.log(data);
          
-//      //  to print 1st element in array
-//         console.log(data[0]);
+     //  to print 1st element in array
+        console.log(data[0]);
            
-//         //filter 1 :removing empty value data
+        //filter 1 :removing empty value data
    
-//         let finalData=data.filter((item)=>(item.intensity!=""&& item.country!="" && item.likelihood!="" && item.relevance !="" && item.start_year!="" && item.topic!="" && item.region!=""));
+        let finalData=data.filter((item)=>(item.intensity!=""&& item.country!="" && item.likelihood!="" && item.relevance !="" && item.start_year!="" && item.topic!="" && item.region!=""));
         
-//         //filter 2 :removing unwanted keyvalue pairs
+        //filter 2 :removing unwanted keyvalue pairs
         
-//      let finalData2=finalData.map((item)=>{
-//        return(item.topic);
+     let finalData2=finalData.map((item)=>{
+       return(item.topic);
              
-//      });
+     });
    
 
-//      let finalData3=[];
+     let finalData3=[];
 
-//      finalData2.forEach((element)=>{
+     finalData2.forEach((element)=>{
 
-//        if(finalData3.includes(element)==false)
-//        {
-//            finalData3.push(element);
-//        }
+       if(finalData3.includes(element)==false)
+       {
+           finalData3.push(element);
+       }
 
-//      });
+     });
 
-//      res.json(finalData3);
+     res.json(finalData3);
    
 
-// })
-// });
+})
+});
 
 
 
-// app.get("/getAllYears",function(req,res){
+app.get("/getAllYears",function(req,res){
 
 
-//     //3.get all documets (as a array of json objects) from database
-//     myCollectionModel.find({}).then(function(data) {
+    //3.get all documets (as a array of json objects) from database
+    myCollectionModel.find({}).then(function(data) {
 
-//        console.log(data);
+       console.log(data);
          
-//      //  to print 1st element in array
-//         console.log(data[0]);
+     //  to print 1st element in array
+        console.log(data[0]);
            
-//         //filter 1 :removing empty value data
+        //filter 1 :removing empty value data
    
-//         let finalData=data.filter((item)=>(item.intensity!=""&& item.country!="" && item.likelihood!="" && item.relevance !="" && item.start_year!="" && item.topic!="" && item.region!=""));
+        let finalData=data.filter((item)=>(item.intensity!=""&& item.country!="" && item.likelihood!="" && item.relevance !="" && item.start_year!="" && item.topic!="" && item.region!=""));
         
-//         //filter 2 :removing unwanted keyvalue pairs
+        //filter 2 :removing unwanted keyvalue pairs
         
-//      let finalData2=finalData.map((item)=>{
-//        return(item.start_year);
+     let finalData2=finalData.map((item)=>{
+       return(item.start_year);
              
-//      });
+     });
    
 
-//      let finalData3=[];
+     let finalData3=[];
 
-//      finalData2.forEach((element)=>{
+     finalData2.forEach((element)=>{
 
-//        if(finalData3.includes(element)==false)
-//        {
-//            finalData3.push(element);
-//        }
+       if(finalData3.includes(element)==false)
+       {
+           finalData3.push(element);
+       }
 
-//      });
+     });
 
-//      res.json(finalData3);
+     res.json(finalData3);
    
 
-// })
-// });
+})
+});
 
 
