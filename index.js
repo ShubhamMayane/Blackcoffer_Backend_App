@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 
 
 //establishing a connection to mongodb database
-mongoose.connect("mongodb+srv://ShubhamSm009:admin@cluster0.ohtho.mongodb.net/MainDatabase");
+mongoose.connect("mongodb+srv://user1:myuser@cluster0.ohtho.mongodb.net//MainDatabase");
 
 
 const objectSchema=new mongoose.Schema({
