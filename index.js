@@ -2,12 +2,39 @@ import express from "express";
 
 import bodyParser from "body-parser";
 
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import mongoose from "mongoose";
 
-const __dirname=dirname(fileURLToPath(import.meta.url));
 
-import myCollectionModel from __dirname+"/databaseLogic.js";
+
+
+//establishing a connection to mongodb database
+mongoose.connect("mongodb+srv://ShubhamSm009:admin@cluster0.ohtho.mongodb.net/MainDatabase");
+
+
+const objectSchema=new mongoose.Schema({
+            end_year:String,
+            intensity: Number,
+            sector: String,
+            topic: String,
+            insight:String,
+            url: String,
+            region: String,
+            start_year: String,
+            impact: String,
+            added: String,
+            published: String,
+            country: String,
+            relevance: Number,
+            pestle: String,
+            source: String,
+            title: String,
+            likelihood: Number
+});
+
+
+const myCollectionModel=mongoose.model("MainCollection",objectSchema);
+
+
 
 
 
