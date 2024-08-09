@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const app=express();
 
 
-import mongoose from "mongoose";
+
 
 
 
