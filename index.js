@@ -4,6 +4,8 @@ import bodyParser from "body-parser";
 
 import mongoose from "mongoose";
 
+import cors from "cors";
+
 
 
 
@@ -42,6 +44,7 @@ const app=express();
 
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(cors());
 
 const port =process.env.PORT || 5000;
 
